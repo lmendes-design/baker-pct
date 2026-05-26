@@ -1,0 +1,11 @@
+{
+  "name": "baker-pct",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter landing dev",
+    "build": "pnpm --filter landing build",
+    "lint": "pnpm --filter landing lint",
+    "start": "pnpm --filter landing start"
+  },
+  "packageManager": "pnpm@11.3.0"
+}
