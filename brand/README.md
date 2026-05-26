@@ -2,6 +2,8 @@
 
 Canonical brand assets and guidelines. Treat this folder as the **single source of truth** — every exported logo, color, or font used in the landing page or iOS app should trace back to a file here.
 
+**Start here:** [`guidelines.md`](./guidelines.md) — Baker Percentage brand guidelines v0.1.
+
 ## Suggested structure
 
 ```
