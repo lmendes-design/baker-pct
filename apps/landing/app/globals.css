@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand palette — see brand/guidelines.md §3.2 */
+  --color-crumb:  #f4ede0;
+  --color-char:   #1a1614;
+  --color-rye:    #2a1f1a;
+  --color-flour:  #6e665c;
+  --color-starch: #a8a096;
+  --color-ember:  #c8421c;
+
+  /* Type stack — see brand/guidelines.md §3.3 */
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans:    var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono:    var(--font-geist-mono), ui-monospace, monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  background: var(--color-crumb);
+  color: var(--color-char);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Mono numerals tabular by default — the recipe screen relies on column alignment */
+.font-mono {
+  font-variant-numeric: tabular-nums;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Slider — minimal native styling tuned to brand */
+input[type="range"].brand-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"].brand-range::-webkit-slider-runnable-track {
+  height: 1px;
+  background: var(--color-flour);
+  opacity: 0.4;
+}
+input[type="range"].brand-range::-moz-range-track {
+  height: 1px;
+  background: var(--color-flour);
+  opacity: 0.4;
+}
+input[type="range"].brand-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 0;
+  background: var(--color-ember);
+  margin-top: -7px;
+}
+input[type="range"].brand-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 0;
+  border: none;
+  background: var(--color-ember);
 }
