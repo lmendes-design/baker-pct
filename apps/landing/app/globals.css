@@ -9,11 +9,24 @@
   --color-starch: #a8a096;
   --color-ember:  #c8421c;
 
-  /* Type stack — see brand/guidelines.md §3.3 */
+  /* Type stack */
   --font-display: var(--font-fraunces), Georgia, serif;
   --font-sans:    var(--font-geist-sans), system-ui, sans-serif;
   --font-mono:    var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Fluid scale — clamps keyed to viewport */
+  --step-mono:    clamp(0.6875rem, 0.66rem + 0.12vw, 0.75rem);
+  --step-small:   clamp(0.8125rem, 0.78rem + 0.18vw, 0.9rem);
+  --step-body:    clamp(0.95rem, 0.9rem + 0.25vw, 1.0625rem);
+  --step-lead:    clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+  --step-h3:      clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  --step-h2:      clamp(2.25rem, 1.5rem + 3vw, 4rem);
+  --step-h1:      clamp(3.5rem, 2rem + 6vw, 7.5rem);
+  --step-mega:    clamp(5rem, 1.5rem + 13vw, 15rem);
 }
+
+/* ─── Reset-ish base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
 
 html, body {
   background: var(--color-crumb);
@@ -21,43 +34,64 @@ html, body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Mono numerals tabular by default — the recipe screen relies on column alignment */
-.font-mono {
-  font-variant-numeric: tabular-nums;
+body {
+  position: relative;
+  min-height: 100dvh;
+  overflow-x: hidden;
 }
 
-/* Slider — minimal native styling tuned to brand */
-input[type="range"].brand-range {
-  -webkit-appearance: none;
-  appearance: none;
-  background: transparent;
-  cursor: pointer;
+/* Paper grain — fixed overlay, low-opacity SVG noise */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 200px 200px;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
 }
-input[type="range"].brand-range::-webkit-slider-runnable-track {
-  height: 1px;
-  background: var(--color-flour);
-  opacity: 0.4;
+
+main { position: relative; z-index: 2; }
+
+/* Tabular numerals everywhere mono is used */
+.font-mono { font-variant-numeric: tabular-nums; }
+
+/* Selection */
+::selection { background: var(--color-ember); color: var(--color-crumb); }
+
+/* Focus — keyboard only, visible */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 3px;
 }
-input[type="range"].brand-range::-moz-range-track {
-  height: 1px;
-  background: var(--color-flour);
-  opacity: 0.4;
+
+/* Live dot ping */
+@keyframes ember-ping {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  70%  { transform: scale(2.6); opacity: 0;    }
+  100% { transform: scale(2.6); opacity: 0;    }
 }
-input[type="range"].brand-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  border-radius: 0;
-  background: var(--color-ember);
-  margin-top: -7px;
+.ember-ping {
+  animation: ember-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
-input[type="range"].brand-range::-moz-range-thumb {
-  width: 14px;
-  height: 14px;
-  border-radius: 0;
-  border: none;
-  background: var(--color-ember);
+
+/* Subtle entry reveal — used sparingly */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 600ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

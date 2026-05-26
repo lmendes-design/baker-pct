@@ -2,19 +2,19 @@
 
 import { useState } from "react";
 import HeroSwitcher, { type HeroId } from "./_components/hero-switcher";
-import HeroCalculator from "./_components/hero-calculator";
-import HeroRecipe from "./_components/hero-recipe";
-import HeroManifesto from "./_components/hero-manifesto";
+import HeroFormula from "./_components/hero-formula";
+import HeroHydration from "./_components/hero-hydration";
+import HeroBake from "./_components/hero-bake";
 
 export default function Home() {
-  const [active, setActive] = useState<HeroId>("calculator");
+  const [active, setActive] = useState<HeroId>("formula");
 
   return (
-    <main className="relative min-h-screen">
+    <main>
+      {active === "formula" && <HeroFormula />}
+      {active === "hydration" && <HeroHydration />}
+      {active === "bake" && <HeroBake />}
       <HeroSwitcher active={active} onChange={setActive} />
-      {active === "calculator" && <HeroCalculator />}
-      {active === "recipe" && <HeroRecipe />}
-      {active === "manifesto" && <HeroManifesto />}
     </main>
   );
 }
