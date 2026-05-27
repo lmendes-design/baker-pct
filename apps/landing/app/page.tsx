@@ -2,18 +2,18 @@
 
 import { useState } from "react";
 import HeroSwitcher, { type HeroId } from "./_components/hero-switcher";
-import HeroFormula from "./_components/hero-formula";
-import HeroHydration from "./_components/hero-hydration";
-import HeroBake from "./_components/hero-bake";
+import HeroSplit from "./_components/hero-split";
+import HeroNotebook from "./_components/hero-notebook";
+import HeroPractice from "./_components/hero-practice";
 
 export default function Home() {
-  const [active, setActive] = useState<HeroId>("formula");
+  const [active, setActive] = useState<HeroId>("split");
 
   return (
     <main>
-      {active === "formula" && <HeroFormula />}
-      {active === "hydration" && <HeroHydration />}
-      {active === "bake" && <HeroBake />}
+      {active === "split" && <HeroSplit />}
+      {active === "notebook" && <HeroNotebook />}
+      {active === "practice" && <HeroPractice />}
       <HeroSwitcher active={active} onChange={setActive} />
     </main>
   );

@@ -3,6 +3,7 @@
 @theme {
   /* Brand palette — see brand/guidelines.md §3.2 */
   --color-crumb:  #f4ede0;
+  --color-linen:  #ede3d2;  /* NEW in v0.2 — Bake register paper */
   --color-char:   #1a1614;
   --color-rye:    #2a1f1a;
   --color-flour:  #6e665c;
@@ -13,8 +14,9 @@
   --font-display: var(--font-fraunces), Georgia, serif;
   --font-sans:    var(--font-geist-sans), system-ui, sans-serif;
   --font-mono:    var(--font-geist-mono), ui-monospace, monospace;
+  --font-hand:    var(--font-caveat), "Comic Sans MS", cursive;  /* NEW in v0.2 */
 
-  /* Fluid scale — clamps keyed to viewport */
+  /* Fluid scale */
   --step-mono:    clamp(0.6875rem, 0.66rem + 0.12vw, 0.75rem);
   --step-small:   clamp(0.8125rem, 0.78rem + 0.18vw, 0.9rem);
   --step-body:    clamp(0.95rem, 0.9rem + 0.25vw, 1.0625rem);
@@ -23,6 +25,12 @@
   --step-h2:      clamp(2.25rem, 1.5rem + 3vw, 4rem);
   --step-h1:      clamp(3.5rem, 2rem + 6vw, 7.5rem);
   --step-mega:    clamp(5rem, 1.5rem + 13vw, 15rem);
+
+  /* Motion — two tempos per v0.2 §3.7 */
+  --ease-formula: cubic-bezier(0.22, 1, 0.36, 1);  /* snappy quart */
+  --ease-bake:    cubic-bezier(0.4, 0, 0.2, 1);    /* breath */
+  --t-formula:    250ms;
+  --t-bake:       550ms;
 }
 
 /* ─── Reset-ish base ─────────────────────────────────────────── */
@@ -43,7 +51,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Paper grain — fixed overlay, low-opacity SVG noise */
+/* Paper grain — fixed overlay, lighter on Crumb */
 body::before {
   content: "";
   position: fixed;
@@ -58,6 +66,24 @@ body::before {
 
 main { position: relative; z-index: 2; }
 
+/* Linen surfaces — slightly more grain than Crumb (older paper) */
+.surface-linen {
+  background-color: var(--color-linen);
+  position: relative;
+}
+.surface-linen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.8 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 220px 220px;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+.surface-linen > * { position: relative; z-index: 1; }
+
 /* Tabular numerals everywhere mono is used */
 .font-mono { font-variant-numeric: tabular-nums; }
 
@@ -71,22 +97,41 @@ main { position: relative; z-index: 2; }
   outline-offset: 3px;
 }
 
+/* Polaroid drop — paper-on-paper effect */
+.polaroid {
+  background: var(--color-crumb);
+  padding: 14px 14px 44px 14px;
+  box-shadow:
+    0 1px 0 rgba(26, 22, 20, 0.04),
+    0 2px 4px rgba(26, 22, 20, 0.06),
+    0 8px 24px rgba(26, 22, 20, 0.08);
+}
+
 /* Live dot ping */
 @keyframes ember-ping {
   0%   { transform: scale(1);   opacity: 0.55; }
   70%  { transform: scale(2.6); opacity: 0;    }
   100% { transform: scale(2.6); opacity: 0;    }
 }
-.ember-ping {
-  animation: ember-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
+.ember-ping { animation: ember-ping 1.8s var(--ease-bake) infinite; }
 
-/* Subtle entry reveal — used sparingly */
-@keyframes rise {
-  from { opacity: 0; transform: translateY(8px); }
+/* Entry reveal — bake register, slower with breath */
+@keyframes bake-rise {
+  from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.rise { animation: rise 600ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.bake-rise {
+  animation: bake-rise var(--t-bake) var(--ease-bake) both;
+}
+
+/* Formula register entry — snappier */
+@keyframes formula-rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.formula-rise {
+  animation: formula-rise var(--t-formula) var(--ease-formula) both;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

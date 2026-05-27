@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Caveat, Fraunces, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -20,10 +20,19 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+// Feature font — Bake register marginalia only. Never marketing chrome.
+// See brand/guidelines.md §3.3.
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500"],
+});
+
 export const metadata: Metadata = {
-  title: "Baker Percentage — Recipes in percentages.",
+  title: "Baker Percentage — Recipes in percentages. Bakes in your kitchen.",
   description:
-    "The iPhone app for home bakers who write their own bread recipes — in the same precise language professional bakeries use.",
+    "The iPhone app for home bakers to write recipes in baker's percentages, set timers that survive an overnight ferment, and keep a diary of every bake.",
 };
 
 export default function RootLayout({
@@ -32,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${geistSans.variable} ${geistMono.variable}`}
+      className={`${fraunces.variable} ${geistSans.variable} ${geistMono.variable} ${caveat.variable}`}
     >
       <body>{children}</body>
     </html>
