@@ -1,5 +1,13 @@
 # Brand guidelines — changelog
 
+## v1.0 — 2026-05-28
+
+Editorial pass. No content changes — every decision from v0.2 is preserved. The doc is rewritten as a single settled voice: the "v0.1 said X, v0.2 introduces Y" scaffolding is removed, inline `(NEW in v0.2)` tags are stripped, and Appendix C (the v0.1→v0.2 diff) is dropped. The brand stops describing its own version history inside the working document; the changelog (this file) is where that lives instead.
+
+This is the working document going forward.
+
+---
+
 ## v0.2 — 2026-05-26
 
 The biggest revision since the founding document. Triggered by the insight that **bread is not a cake recipe** — cakes are deterministic, bread is responsive. v0.1 framed Baker Percentage as a precision-led brand ("the math is the recipe"); v0.2 recognizes precision is half the truth, and adds the other half.
