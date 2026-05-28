@@ -1,5 +1,35 @@
 # Brand guidelines — changelog
 
+## v1.1 — 2026-05-28
+
+Structural revision focused on **concept over prescription**. The brand's strategic decisions are unchanged; the doc just stops telling itself how to execute them.
+
+### Visual identity (Part 3) — reframed as concept
+
+- Specific hex codes removed. The doc talks about "warm paper," "deep ink," "the hot accent" — not named colors with values. Contrast ratios moved out.
+- Named typefaces removed. The doc talks about "a display serif with character," "a precise neo-grotesque sans," "a monospaced face for quantities," "a handwriting face for marginalia" — not specific font families.
+- Type scale table removed.
+- Construction specs removed (clear-space pixels, minimum sizes, lockup variants).
+
+The principles stay; the implementation lives in the design system (tokens, font files, Figma) where it can be substituted without altering the brand.
+
+### Application (Part 4) — removed entirely
+
+App icon details, recipe surface layout, bake/notebook surface layout, timer treatment, landing page direction, social posts, don'ts gallery. These were design drawings, not brand commitments. They belong in the design system and in design files, not in a brand document.
+
+### Operational (Part 5) — reduced
+
+Kept: naming for features, file structure for brand assets.
+Removed: recipe formatting standard, bake formatting standard, community ritual specifics, accessibility, versioning section.
+
+The recipe and bake schemas live in product spec; accessibility lives in the design system and engineering standards; community ritual lives in product/community docs.
+
+### Net effect
+
+The doc is now about half its previous length. It reads as a brand argument, not an implementation manual. What the brand is and why — here. How to build it — downstream.
+
+---
+
 ## v1.0 — 2026-05-28
 
 Editorial pass. No content changes — every decision from v0.2 is preserved. The doc is rewritten as a single settled voice: the "v0.1 said X, v0.2 introduces Y" scaffolding is removed, inline `(NEW in v0.2)` tags are stripped, and Appendix C (the v0.1→v0.2 diff) is dropped. The brand stops describing its own version history inside the working document; the changelog (this file) is where that lives instead.

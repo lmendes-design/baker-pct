@@ -1,6 +1,6 @@
 # Baker Percentage — Brand Guidelines
 
-**Version:** 1.0
+**Version:** 1.1
 **Date:** 2026-05-28
 **Status:** Working brand document. Every decision here is a commitment, not a suggestion — but every commitment is revisable with reason.
 
@@ -8,7 +8,9 @@
 
 ## How to read this document
 
-Five parts: strategy, verbal identity, visual identity, application, operational rules. Plus two appendices: risks to navigate, and the things this brand has already committed to never doing.
+Four parts: strategy, verbal identity, visual identity, operational essentials. Plus two appendices: risks to navigate, and the things this brand has already committed to never doing.
+
+Implementation specifics — hex codes, typeface choices, sizing tokens, screen layouts — live in the design system, not here. This document commits to *what* the brand is and *why*. The *how* is downstream.
 
 Every section commits to a single direction. Where there's a risk, it's named.
 
@@ -26,10 +28,10 @@ Everything in this document serves that sentence. The italicized *and a diary* i
 
 The brand has two voices and two visual languages, both real, both Baker Percentage, deployed at different moments.
 
-| Register      | When it speaks                                          | What it sounds and looks like                                                                |
-| ------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| **Formula**   | The recipe. The math. The artifact you author and publish. | Editorial. Precise. Mono numerals. Hairlines. Crumb canvas. Geist Mono for every quantity. |
-| **Bake**      | The diary. The process. The notes you take during and after a bake. | Warm. Handed. Slower. Linen paper. Handwriting in the margins. Photos dropped in like polaroids. |
+| Register      | When it speaks                                                       | What it sounds and looks like                                                                |
+| ------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **Formula**   | The recipe. The math. The artifact you author and publish.           | Editorial. Precise. Mono numerals. Hairlines. Lighter paper.                                  |
+| **Bake**      | The diary. The process. The notes you take during and after a bake.  | Warm. Handed. Slower. Older paper. Handwriting in the margins. Photos dropped in like polaroids. |
 
 These don't fight. A baker's notebook has both: a typed formula on one page, scribbled notes on the next. The brand earns its dimensionality by holding both without compromising either.
 
@@ -301,190 +303,50 @@ The founding text. Goes on the About page, in the first email, on a wall behind 
 
 # Part 3 — Visual identity
 
-## 3.1 Logo system
+The visual identity makes the two registers feel real. It refuses the wellness lookalike that dominates food brands and the OLED-with-neon lookalike that dominates tech apps. It puts Baker Percentage in the third place — editorial print, warm paper, deep ink, mono numbers — where almost nothing else lives.
 
-### Wordmark
+What follows is the brand's argument for what visual choices have to do. The specifics — hex codes, named typefaces, sizing tokens, contrast ratios — live in the design system. The principles here are upstream of those choices and outlive them.
 
-The primary logo is the word **"Baker Percentage"** set in **Fraunces** (Regular weight, optical size set for display), with a custom-treated **`%`** glyph as the focal character — or as a standalone symbol.
+## 3.1 The symbol
 
-The `%` is the symbol. The whole identity orbits it.
+The brand orbits a single mark — the **`%`** glyph. It is the most ownable visual asset in the system and appears everywhere the brand does: app icon, favicon, social profile, lockups, swag, future collaborations.
 
-### Symbol
+The symbol must survive from favicon scale to building-scale signage without redrawing. It is rendered in deep ink on warm paper by default; inversion (paper on ink) is allowed. No other color combinations exist. It is never decorated, never set inside a circle or rounded-rectangle background outside the app icon container, never combined with a wheat stalk, loaf illustration, or chef's hat.
 
-The **`%`** mark is the brand symbol. It is the single most ownable asset in the system and appears everywhere the brand does: app icon, favicon, social profile, lockups, swag, future bakery collabs.
+## 3.2 Palette
 
-**System principles:**
+**Two paper stocks, one ink, one hot accent.** That's the whole system.
 
-- The symbol must survive from **16×16 px** (favicon, in-app nav) up to building-scale signage without redrawing — one master vector, optically corrected at small sizes if needed.
-- The mark is never decorated, never set inside a circle/rounded-rect background outside the app icon container, never combined with a wheat stalk, loaf illustration, or chef's hat.
-- The mark is rendered in Char on Crumb by default. Inverted (Crumb on Char or Crumb on Rye) is allowed; **no other color combinations exist.**
-- The mark is not Ember. Ember is reserved for action and state.
+The Formula register uses a lighter, cleaner paper — the canvas for recipes and the app default. The Bake register uses an older, slightly more humid paper — same warmth, more grain, used for diary entries and most marketing surfaces. Both are paper. Neither is white. The brand has no pure-white surface.
 
-### Lockups
+The ink is deep but not pure black. Warm enough to belong on the paper. The single accent is hot, surgical, never decorative — reserved for the one most important action on a screen, the live-recalculating number, the active timer's edge. It never covers more than a sliver of any surface. It never sits next to a second accent, because there is no second accent.
 
-1. **Primary (vertical):** `%` symbol stacked above the wordmark. App launch screen, App Store icon source.
-2. **Horizontal:** `%` symbol left of the wordmark, separated by a 1× counter-width gap. Marketing headers.
-3. **Symbol-only:** for app icon, favicon, social profile images, swag.
-4. **Wordmark-only:** for footers, fine print, and contexts where the symbol is repeated elsewhere on the surface.
+**Light is the default.** Most food apps default to cream-and-sage wellness; most tech apps default to OLED black with a neon accent. Both look generic. We sit in the editorial-print third place — warm paper, deep ink, hot accent. The brand reads like a cookbook page, not a wellness brand and not an AI startup.
 
-### Clear space
+Dark mode is a respected system setting, not the canvas. The dark canvas is warm cocoa-paper — never OLED — so the dark version still feels like the same brand printed on darker stock.
 
-Minimum clear space around any lockup: the height of the lowercase "e" in the wordmark. Never less.
+## 3.3 Type strategy
 
-### Minimum sizes
+Four typographic roles, used in strict accordance with what each one is for.
 
-- Symbol-only: **16px** (favicon), **24px** (in-app nav)
-- Wordmark: **80px** wide
-- Horizontal lockup: **120px** wide
+- **A display serif with character** carries recipe titles, hero copy, and any marquee moment. The brand's voice when it speaks formally.
+- **A precise neo-grotesque sans** carries UI labels, body copy, navigation, buttons. The brand's voice when it speaks plainly.
+- **A monospaced face** is used exclusively for quantities — every percentage, gram, temperature, duration, ratio. This is the signature typographic move of the brand. If it's a number, it's in the mono. If it's prose, it's in the sans. There is no third option.
+- **A handwriting face** is reserved for diary marginalia and for the brand's "demo notebook" examples that show what a bake page looks like. It is a *feature* font, not a brand font. It never appears in marketing chrome, UI labels, or recipe content. It represents a user's handwriting — never the brand's.
 
-### Don'ts
-
-- Don't stretch, skew, or rotate the symbol.
-- Don't set the wordmark in any other typeface.
-- Don't place the wordmark on a busy photograph without a solid backplate.
-- Don't add a "tagline pill" beneath the lockup. The tagline lives separately.
-- Don't ever combine the `%` with a wheat stalk drawing, a bread loaf illustration, or a chef's hat. Ever.
-
-## 3.2 Color
-
-Six named colors. Each holds its hex regardless of context.
-
-| Name       | Hex        | Role                                                                                  |
-| ---------- | ---------- | ------------------------------------------------------------------------------------- |
-| **Crumb**  | `#f4ede0`  | Formula register primary background. Recipe pages, marketing layouts, app default.    |
-| **Linen**  | `#ede3d2`  | Bake register primary background. Diary pages, journal entries, process content. Slightly more aged, more humid, less yellow than Crumb. |
-| **Char**   | `#1a1614`  | Primary text on Crumb and Linen.                                                      |
-| **Rye**    | `#2a1f1a`  | Dark mode background (not the default). Warm cocoa-paper.                             |
-| **Flour**  | `#6e665c`  | Secondary text and hairlines on Crumb (light mode).                                   |
-| **Starch** | `#a8a096`  | Secondary text and hairlines on Rye (dark mode).                                      |
-| **Ember**  | `#c8421c`  | Single accent. Surgical use — see rules.                                              |
-
-### Critical decision: light mode is the default
-
-Most food apps default to cream-and-sage wellness palettes. Most tech apps default to OLED-black + neon accent. Both look generic. We sit in the third place — **editorial print**: warm paper, deep ink, hot accent, mono numbers. The brand reads like a cookbook page or a bakery's printed spec sheet, not a wellness brand and not an AI startup.
-
-Dark mode is supported as a respected system setting. It uses Rye as the canvas (warm and paper-like, not cold) so the dark version still feels like the same brand printed on darker stock — not a different product.
-
-### When to use Crumb vs. Linen
-
-This is a register decision, not an aesthetic one.
-
-- **Crumb**: any screen, panel, or surface whose primary content is a *formula* (recipe authoring, recipe display, published formula, formula list). Also: app default, settings, structural surfaces, marketing layouts that lead with the recipe register.
-- **Linen**: any screen whose primary content is a *bake page* (a notebook entry). Also: the notebook index, the bake-in-progress companion screen, and marketing copy in the Bake register.
-
-When a surface holds both — e.g., a published formula with its accompanying bake notes attached — split the canvas: Crumb for the formula side, Linen for the bake side. The hairline between them is the brand showing both halves at once.
-
-### Surface rules
-
-- **Background:** Crumb or Linen across the entire viewport (no off-color hero sections, no full-bleed Ember blocks).
-- **Cards and elevated surfaces:** **same paper, separated by a 1px Flour hairline.** No drop shadows, no tinted card fills. The editorial discipline is in the hairlines.
-- **Dividers:** 1px Flour at 30% opacity.
-- **Pure white (`#FFFFFF`) is forbidden.** It reads as clinical. Crumb is the lightest surface; Linen is warmer still.
-
-### Ember usage rules
-
-Ember is the single accent. It is loud on purpose. Therefore:
-
-- Use Ember for the **one** most important action per screen — never two.
-- Use Ember for timer-active states (a stage in progress).
-- Use Ember for the live-recalculating number on the recipe screen (the one currently being edited).
-- Use Ember for the "live" pulse on a bake-in-progress.
-- Never use Ember for body copy.
-- Never use Ember on backgrounds larger than ~10% of the viewport.
-- Never combine Ember with any other accent color. There is no other accent color.
-
-### Semantic system
-
-- **Success:** Char on Crumb with a 1px Char hairline. Completion is signaled by structure, not color.
-- **Warning:** Ember at 70% opacity, with the word "Warning" or equivalent state label.
-- **Error:** Ember at full strength with a 1px Ember border around the affected field.
-- **Disabled:** Flour at 40% opacity (light mode); Starch at 40% opacity (dark mode).
-
-If a designer asks for a green for success, the answer is no. Success in this brand is calm, not celebratory.
-
-## 3.3 Typography
-
-Three primary typefaces plus one feature font. All open-source. All free.
-
-### Display: Fraunces
-
-A variable serif with character. Used for: wordmark, formula titles, hero copy, marquee moments. Weights: Regular (400) and SemiBold (600). Optical size adjusted per surface.
-
-**Why Fraunces:** soft serifs that feel handcrafted but precision-cut. Variable axes let us pull personality up or down.
-
-### Body / UI: Geist Sans
-
-A precise neo-grotesque sans. Used for: all UI labels, body copy, navigation, buttons. Weights: Regular (400), Medium (500), SemiBold (600).
-
-**Why Geist Sans:** clean, machine-like rhythm without coldness. Pairs cleanly with Fraunces.
-
-### Numbers: Geist Mono — the signature move
-
-Used **exclusively** for: baker's percentages, gram weights, hydration values, temperatures, times, durations, oven settings, recipe ratios.
-
-This is the most ownable typographic move in the brand. Every number in the app, in marketing, on the landing page is set in mono. It makes recipes look like spec sheets. It makes the math feel like math.
-
-**Rule:** if it's a quantity, it's in Geist Mono. If it's prose, it's in Geist Sans. There is no third option.
-
-### Marginalia: Caveat
-
-A clean handwriting font. Used **exclusively** in the Bake register, and only for:
-
-- User diary marginalia rendered in the brand's "demo notebook" examples
-- Marketing layouts that show a notebook page with handwritten notes
-- The optional "handwritten" diary entry style users can opt into (defaults to Geist Sans)
-- Print/exports that mimic a baker's notebook page
-
-Caveat is a *feature* font, not a brand font. It is never used for marketing headlines, UI chrome, or recipe content. Sizes: 16–22px. Color: Char or Flour. Never Ember.
-
-**Why Caveat:** clean enough to read, characterful enough to feel hand-written without crossing into cute.
-
-### Type scale (mobile-first, iOS)
-
-| Token        | Typeface       | Size  | Weight | Line height | Use                          |
-| ------------ | -------------- | ----- | ------ | ----------- | ---------------------------- |
-| `display-l`  | Fraunces       | 48    | 400    | 1.05        | Hero, splash                 |
-| `display-m`  | Fraunces       | 32    | 400    | 1.1         | Recipe title                 |
-| `display-s`  | Fraunces       | 24    | 600    | 1.15        | Section header               |
-| `body-l`     | Geist Sans     | 17    | 400    | 1.45        | Long-form prose              |
-| `body`       | Geist Sans     | 15    | 400    | 1.45        | Default body                 |
-| `body-s`     | Geist Sans     | 13    | 400    | 1.4         | Captions, metadata           |
-| `label`      | Geist Sans     | 12    | 500    | 1.2         | UI labels, all caps OK       |
-| `mono-l`     | Geist Mono     | 24    | 500    | 1.1         | Big numbers (hero hydration) |
-| `mono`       | Geist Mono     | 15    | 400    | 1.3         | Inline percentages           |
-| `mono-s`     | Geist Mono     | 12    | 400    | 1.3         | Recipe table cells           |
-| `hand`       | Caveat         | 18–22 | 400    | 1.3         | Bake register marginalia     |
+The principle is what the doc commits to. Specific typefaces, weights, and sizing live in the design system and can be substituted for equivalents that serve the same role without changing the brand.
 
 ## 3.4 Materiality
 
-Materiality is the primary vehicle for the warmth the brand carries — not photography, not voice alone, not lifestyle.
+**Materiality is the primary vehicle for the warmth the brand carries** — not photography, not voice alone, not lifestyle.
 
-### The two paper stocks
+The two paper stocks are not just colors; they are *paper*. They have grain, weight, edges. Treat them like real paper. The Bake-register paper has slightly more grain than the Formula-register paper — it's older.
 
-**Crumb** and **Linen** are not just colors; they are *paper*. They have grain, they have weight, they have edges. Treat them like real paper:
+Handwriting is a material in this brand, used sparingly and positionally. Marginalia sits in margins, between rows of typed text, or below a printed recipe. It annotates typeset content; it doesn't replace it. The brand types. Users write.
 
-- The page is the surface, not the fill. Backgrounds carry a subtle SVG-noise grain.
-- Linen carries slightly more grain than Crumb (it's older paper).
-- Edges of large surfaces are softened with a 1–2px Flour gradient fade where the page meets the screen edge in marketing layouts — this gives the impression of paper laid on a darker desk, not paper that *is* the screen.
+Photographs, when they appear, are *attached* to the page, not embedded in it — paper-bordered, slightly rotated, with a soft shadow. The page is the page; the photo is the photo. They sit together, but they don't fuse.
 
-### Handwriting as a material
-
-Caveat is the only handwritten element in the brand. Use it:
-
-- **Sparingly.** A few lines per page maximum. Never paragraphs.
-- **Positionally.** Handwriting in a baker's notebook sits in the margin, between rows of typed text, or below a printed recipe. It does not replace typeset content; it annotates it.
-- **Honestly.** The handwriting represents a user's diary note. We do not fake handwriting in marketing as if the brand itself writes by hand. The brand types. Users write.
-
-### Weathered surfaces
-
-For marketing content that needs to feel like a real notebook page:
-
-- Slightly desaturated paper (Linen with -3% saturation in selected areas)
-- A 1–2 pixel "fold" line down the page center (very subtle Flour, 8% opacity), suggesting a bound notebook
-- Coffee-ring or flour-dust corner accents (rare — once per landing page, never in app UI)
-- Photo elements (when used — see §3.6) appear as **polaroid drops**: with a thin paper border, slight rotation (≤3°), and a soft shadow beneath. They are *attached* to the page, not embedded in it.
-
-### What this is NOT
+Three rules:
 
 - **Not skeuomorphism.** The app is not a fake notebook with leather corners. It is an app that *understands* a notebook.
 - **Not lifestyle.** The texture serves the craft, not a vibe. If a texture starts feeling more "vibe" than "craft," cut it.
@@ -492,274 +354,41 @@ For marketing content that needs to feel like a real notebook page:
 
 ## 3.5 Iconography
 
-Custom icon set, monoline, 1.5px stroke at 24px. Geometric, not illustrative. No filled icons except for active-state replacements of the same outline icon.
-
-Reference vibe: Phosphor Icons (Regular weight).
-
-For diary/notebook UI, icons may render in Char on Linen (instead of Char on Crumb). No other change.
-
-**No food-themed icons in the system.** No wheat stalks, loaves, rolling pins, chef's hats. The brand says "bread" through structure, not picture-language. No AI-generated icons, no gradient icons, no icons with personality.
+A monoline icon set. Geometric, not illustrative. The brand says "bread" through structure, not picture-language. No wheat stalks, no loaves, no rolling pins, no chef's hats. No AI-generated icons, no gradient icons, no icons with personality.
 
 ## 3.6 Photography
 
-Used sparingly. Three contexts:
-
-1. **Recipe cover (optional, baker-supplied).** Top-down crumb shots, single light source, warm shadow. No styled-board flat-lays. Backgrounds: natural wood, parchment, or solid Crumb/Char.
-2. **Marketing hero.** Rare. One image per campaign. Tight crops on a single loaf — score, ear, crumb interior. The bread is the subject. No hands holding bread. No "lifestyle." No people in aprons smiling.
-3. **Bake page polaroids.** Users attach photos to a bake entry (their dough, their crumb shot, their crust). Rendered as polaroid drops on the Linen canvas. These are *user-generated*, not brand-curated. The brand provides the frame; the baker provides the photo.
-
-**Forbidden:**
-
-- Stock photography.
-- Hands tearing bread *in marketing* (user diary photos are fine — that's the user's hand, the user's bread).
-- Wheat fields.
-- Wine glasses next to loaves.
-- "Mediterranean" lifestyle imagery.
-- AI-generated bread photography of any kind.
+Used sparingly. The brand provides the frame; users provide the photos. A user's diary photo of their dough or their crumb is welcome — that's the user's hand, the user's bread, attached to the bake page they wrote. Stock photography, lifestyle photography of hands holding bowls or sourdough on marble with eucalyptus, and AI-generated bread imagery of any kind are forbidden.
 
 Photography is *not* the vehicle of warmth in this brand. Materiality is. Photos appear only where the user puts them.
 
-## 3.7 Motion — kitchen time
+## 3.7 Motion — two tempos
 
 Two motion vocabularies, matched to the two registers.
 
-### Formula register motion
+**The Formula register moves snappily.** Calm, precise, decisive. Numbers animate when they update. Layouts do not animate — they appear. Timers tick without overshoot. The active state of a stage is a single accent stroke, no celebration.
 
-Calm, precise, snappy.
+**The Bake register moves at kitchen time.** Slower. With breath. Things take the time bread takes. Entries fade and rise as if settling. Photographs drop in with a subtle final settle. Scroll is gentle, not snappy. There is always a pause between scroll-triggered reveals — never a cascade.
 
-- Transitions: 250ms, `cubic-bezier(0.22, 1, 0.36, 1)` (ease-out quart)
-- Numbers animate when they update (count up/down)
-- Layouts do not animate (they appear)
-- Timers tick in monospace, no overshoot
-- The progress ring on an active stage stays a single Ember stroke
+**Always:**
 
-### Bake register motion
+- Respect reduced motion. All animations collapse to instant.
+- Numbers always animate when they change in either register.
+- Layouts never animate.
 
-Slower. With more breath. Things take the time bread takes.
+**Never:**
 
-- Page entry: 500–700ms fade + slight rise (8px), `cubic-bezier(0.4, 0, 0.2, 1)` (ease-in-out smooth)
-- Diary entries appear in sequence, staggered 80ms each, no faster
-- Polaroid photos drop in with a 600ms transition that includes a subtle settle (overshoot of 1–2px, then return)
-- Long-form scroll on the landing page is Lenis-smoothed at a calm coefficient (lerp ~0.08, slower than the Lenis default)
-- Hover states on diary content have 300ms transitions, not 200ms
-- There is **always a pause** between scroll-triggered reveals. Never a cascade.
-
-### Always
-
-- Respect `prefers-reduced-motion`. All animations collapse to 0.01ms.
-- Numbers always animate when they change in either register (this is brand-defining).
-- Layouts never animate (they appear).
-
-### Never
-
-- Spring physics with bounce (too playful).
-- Page-level slide transitions (too app-y).
+- Spring physics with bounce.
+- Page-level slide transitions.
 - Snap scrolling.
-- Parallax (the brand isn't a magazine cover).
-- "Scroll-jacked" storytelling.
+- Parallax.
+- Scroll-jacked storytelling.
 
 ---
 
-# Part 4 — Application
+# Part 4 — Operational essentials
 
-## 4.1 App icon
-
-The existing `%` mark, as designed by the founder. iOS Light is the canonical version. iOS Tinted and Dark variants exported from the same master.
-
-Standard exports: iOS Light, iOS Tinted (system-tinted variants for iOS 18+), Dark (for users who choose dark home screens; mirrors the Light icon with inverted figure-ground — Crumb mark on Rye or Char). No alternate icons at launch.
-
-The icon is a flag. You should be able to spot it on a home screen at a glance.
-
-## 4.2 Recipe surface
-
-The recipe page is the most important Formula register surface in the entire product.
-
-- Title in Fraunces, 32pt.
-- A row of three large mono numbers immediately under the title: **hydration**, **total flour weight**, **salt %**. These are the recipe's signature.
-- Ingredient list as a two-column table: ingredient (Geist Sans) and percentage (Geist Mono).
-- A right-aligned **gram** column toggle (the percentages are primary; grams are the conversion).
-- Stages as a vertical list, each with a duration in mono and a "start timer" affordance.
-
-If a screenshot of the recipe page doesn't immediately look unlike every other recipe app, the design has failed.
-
-## 4.3 Bake / notebook surface
-
-The central Bake register surface — and the home for the warm register inside the product.
-
-### Anatomy of a bake page
-
-A bake is a single notebook page. Its anatomy:
-
-```
-[Page number]   [Date]   [Formula it's attached to]
-─────────────────────────────────────────────────────
-[Optional title — the user's own name for this bake]
-
-[Three "today's conditions" stamps in mono:
- KITCHEN TEMP · HUMIDITY · TOTAL DURATION]
-
-[Stage-by-stage log — each stage with timestamps and an optional note]
-  Autolyse        06:00–07:00       —
-  Mix             07:00              "added a pinch more salt by accident"
-  Bulk            07:30–11:15        "fold 3 felt tight, added 15 min"
-  Shape           11:30
-  Cold retard     12:00 → next day
-  Bake            08:15–09:00 next day
-
-[Free-form notes — what the user wants to remember]
-[Optional polaroid drops — photos of the dough, the crumb, the crust]
-
-[Footer]   [Edit · Publish alongside formula · Export]
-```
-
-### Material treatment
-
-- **Canvas:** Linen.
-- **Type:** Geist Sans for the user's notes, Geist Mono for the time stamps and numbers, **Caveat for any marginalia the user chooses to render as handwriting** (a setting per entry).
-- **Polaroids:** as described in §3.4 — bordered, slightly rotated, soft shadow.
-- **Hairlines:** Flour at 30% opacity, separating sections.
-- **Margins:** generous — at least 1.5× the typographic margin of a recipe page. The page should breathe.
-- **No card fills.** Same rule as the recipe page. The page is the page.
-
-### Tone of system content
-
-When the system speaks on a bake page (e.g., "Anything you'd do differently?"), it speaks in Bake register — generous, particular, optional. Never imperative. Always skippable.
-
-## 4.4 Timer surface
-
-The timer is doing important work; it doesn't need to shout about it.
-
-- Background stays Crumb. The canvas does not shift — the brand does not "go dark" to signal urgency.
-- A 2px Ember progress ring around the stage time remaining is the *only* color change on the screen.
-- Time remaining in `mono-l`, Char.
-- The active stage row gets a 1px Ember left-rule (4px wide, full row height) — the rest of the stage list stays Char-on-Crumb with Flour hairlines.
-- One action available: "End early" — Flour, bottom of screen, no Ember.
-
-## 4.5 Landing page direction
-
-The hero must communicate the two-register brand in three seconds. The recommended layout for the homepage hero is a **split canvas**:
-
-- **Left 60% (Crumb):** a formula at hero scale — title in Fraunces, three signature numbers, a compact ingredient table.
-- **Right 40% (Linen):** a bake page from that same formula — handwritten margin notes in Caveat, a polaroid drop of the crumb shot, the stage log.
-- A thin Flour hairline runs the full height between them — the brand showing both halves at once.
-
-Below the fold, the rest of the page alternates Crumb and Linen sections, each making a single argument:
-
-1. **Formula section (Crumb):** the math is the floor.
-2. **Bake section (Linen):** your hands are the ceiling.
-3. **Notebook section (Linen):** thirty bakes from now, you'll be a different baker.
-4. **Community section (Crumb):** a peer-level library, not a feed.
-5. **Pricing (Crumb):** supported by bakers, not advertisers.
-6. **Footer (Crumb).**
-
-The split-canvas hero is the brand's signature landing-page move.
-
-## 4.6 Social / launch posts
-
-Five formats.
-
-1. **The Number Card** *(Crumb)*. A single huge mono number on Crumb, formula name in Fraunces below.
-2. **The Recipe Spec** *(Crumb)*. A screenshot of the recipe page rendered as an image.
-3. **The Sentence** *(Crumb or Linen)*. One short line of copy on a paper surface. ("Bread is not a cake recipe.")
-4. **The Notebook Page** *(Linen)*. A screenshot of a real-feeling bake page — handwritten marginalia, polaroid drop, stage log. Shows the warm register.
-5. **The Diptych** *(Crumb + Linen)*. Two surfaces side-by-side: the formula on the left, the bake on the right. The same loaf, the math and the hand. The brand argument compressed into one post.
-
-No reels with trending audio. No memes. No carousel listicles.
-
-## 4.7 Don'ts gallery
-
-If a design ever looks like any of these, stop:
-
-- A baking blog with a hero image, a personal anecdote, and a "jump to recipe" button.
-- Yummly's recipe cards (square thumbnails, three-line truncated titles, ratings).
-- A Duolingo-style mascot waving at the user.
-- A cream-and-sage "modern wellness" palette with script accents and pastel terracotta. (Our Crumb is warm paper, not pastel; our Char is true deep ink, not soft brown; our Ember is hot, not muted.)
-- A Linear/Vercel-style OLED-black UI with a neon accent.
-- A serif-and-script logo with a wheat-stalk underline.
-- Any onboarding flow longer than three screens.
-- "Make professional bread at home." Any framing that treats your kitchen as an inferior bakery you're trying to imitate.
-- Any AI-coach pattern: nag notifications, streaks, points, progress bars, "you haven't baked in 3 days" guilt prompts.
-- Lifestyle photography of hands holding bowls, sourdough on a marble counter with eucalyptus next to it, or anyone in a linen apron smiling at a loaf.
-- A "Stories" feature, a "For You" feed, a "Trending" tab, or any pattern from social-engagement playbooks.
-- Treating the diary as content (algorithmic suggestions, "Tap to relive last year's bake," anniversary notifications).
-
----
-
-# Part 5 — Operational
-
-## 5.1 Recipe formatting standard
-
-Every published formula in Baker Percentage follows this schema. Treat changes as you would changes to the logo.
-
-```
-[Formula name]                        — Fraunces, display-m
-By [baker], rev. [n]                  — Geist Sans, body-s, Flour
-
-HYDRATION    TOTAL FLOUR    SALT
-75%          1000g          2.0%      — Geist Mono, mono-l, three columns
-
-INGREDIENTS
-Bread flour            85%   850g
-Whole wheat            15%   150g
-Water                  75%   750g
-Levain                 20%   200g
-Salt                   2.0%  20g
-
-STAGES
-Autolyse               60min
-Bulk ferment           4h    @ 26°C
-Pre-shape              20min
-Final shape            —
-Cold retard            12h   @ 4°C
-Bake                   45min @ 250°C → 230°C
-```
-
-## 5.2 Bake formatting standard
-
-Every bake — published or private — follows this structure. The structure is enforced by the contribution UI in-app; users can't post a free-form paragraph and call it a bake.
-
-```
-[Bake № 12]   [12 May 2026]   [Pan de Campo, rev. 04]
-
-[Optional title]                                        — Fraunces, display-s
-
-CONDITIONS                                              — Geist Mono, mono-s, Flour
-KITCHEN TEMP    HUMIDITY    DURATION
-24.3°C          58%         17h 12min
-
-STAGE LOG                                               — Geist Mono, mono-s, Flour
-Autolyse        06:00–07:00     —
-Mix             07:00           —
-Bulk            07:30–11:15     fold 3 felt tight, +15 min
-Shape           11:30           —
-Cold retard     12:00 → 08:00   fridge ran cold (3°C)
-Bake            08:15–09:00     250°C → 230°C as planned
-
-NOTES                                                   — Geist Sans, body
-[free-form, user-written, 1–3 short paragraphs encouraged]
-
-[POLAROIDS]                                             — image attachments, max 4
-```
-
-Same brand-defining force as the recipe schema. Don't change it without reason.
-
-## 5.3 Community ritual
-
-The community is structured, not free-form. The contribution UI enforces the recipe and bake schemas. You can't post a paragraph; you publish a formula or attach a bake.
-
-- Users are **bakers**.
-- Their content is **formulas** and **bakes**.
-- Verbs: **publish** (not post), **revise** (not edit), **fork** (a formula, when creating a new revision from someone else's).
-- Discussion attaches to a formula at the **stage** level, not the post level.
-- When a bake is published alongside a formula, discussion can also attach to a specific stage of *that bake* — but bake-attached comments are rare and treated as 1:1 conversation, not crowd commentary.
-
-Community language always:
-
-- Refers to the user as **baker** (in second person: "you"; in third: "the baker").
-- Refers to their content as **formulas** and **bakes**, never posts or recipes.
-- Uses "publish" and "revise," not "post" and "edit."
-
-## 5.4 Naming for features
+## 4.1 Naming for features
 
 Names are either **a baker's word** or **a precise English word**. Never marketing-speak.
 
@@ -776,28 +405,7 @@ Names are either **a baker's word** or **a precise English word**. Never marketi
 | The community surface                       | The Feed            | Community, Discover, Explore     |
 | Creating a new revision from someone else's | Fork                | Copy, Duplicate                  |
 
-## 5.5 Accessibility
-
-This is not a section to skim.
-
-- **Contrast — light mode (default).**
-  - **Char on Crumb:** ~16.0 — AAA at all sizes. The default body pair.
-  - **Char on Linen:** ~15.6 — AAA at all sizes.
-  - **Flour on Crumb:** ~5.4 — AA for normal text.
-  - **Flour on Linen:** ~5.1 — AA for normal text.
-  - **Ember on Crumb:** ~5.5 — AA for normal text; AAA for large text.
-  - **Ember on Linen:** ~5.2 — AA for normal text; AAA for large text.
-- **Contrast — dark mode.**
-  - **Crumb on Rye:** ~13.9 — AAA at all sizes.
-  - **Starch on Rye:** ~5.9 — AA for normal text.
-  - **Ember on Rye:** ~6.0 — AA for normal text; AAA for large text.
-- **Font sizing.** All type respects the user's iOS Dynamic Type setting. The scale in §3.3 is the *default*; never hard-code px.
-- **Mono numbers.** Geist Mono is tabular by default — verify all weight digits align. Critical for the recipe screen.
-- **Timers.** Every active timer must announce its state to VoiceOver every 60 seconds and immediately on completion. A baker shouldn't have to look at the screen during a bulk ferment to know where they are.
-- **Color is never the only signal.** Active timers are signaled by Ember *and* by a state label ("Running") *and* by a left-rule on the row. Errors are Ember *and* the word "Error."
-- **Caveat (handwriting font)** is for *decorative* and *user-driven* text only. It does NOT replace accessible UI labels. Any handwritten content also has a Geist Sans equivalent that's read aloud by VoiceOver.
-
-## 5.6 File structure for brand assets
+## 4.2 File structure for brand assets
 
 The `brand/` folder is the canonical source. Anything used elsewhere (landing page, App Store, iOS repo) is exported *from* here — never edited in place.
 
@@ -806,32 +414,24 @@ brand/
 ├── guidelines.md          ← this document
 ├── CHANGELOG.md           ← version history
 ├── logo/
-│   ├── master/            ← Figma or vector source files
+│   ├── master/            ← vector source files
 │   ├── svg/               ← optimized SVG exports
-│   └── png/               ← PNG exports at common sizes (1024, 512, 256, 128, 64, 32)
-├── fonts/
-│   ├── fraunces/          ← OFL license + variable font file
-│   ├── geist/             ← OFL license + variable font file
-│   ├── geist-mono/        ← OFL license + variable font file
-│   └── caveat/            ← OFL license + variable font file
+│   └── png/               ← PNG exports at common sizes
+├── fonts/                 ← licensed font files + license docs
 ├── color/
 │   ├── tokens.json        ← design tokens consumed by web + iOS
 │   └── swatches.pdf       ← print reference
 ├── photography/
 │   └── briefs/            ← photo direction docs for any shoot
 ├── materiality/
-│   ├── grain-textures/    ← noise SVGs for Crumb and Linen
+│   ├── grain-textures/    ← noise textures for the two paper stocks
 │   ├── polaroid-frames/   ← templates
-│   └── notebook-page/     ← reference layouts for the bake page
+│   └── notebook-page/     ← reference layouts
 └── exports/
     ├── app-icon/          ← all iOS icon sizes
     ├── social/            ← profile images, header images
     └── press/             ← logos in PNG + SVG for press use
 ```
-
-## 5.7 Versioning this document
-
-Significant changes require a written rationale in `CHANGELOG.md`. Reversals are rare; when they happen, they deserve their own entry. Don't bump major versions lightly.
 
 ---
 
@@ -843,17 +443,17 @@ A real brand has real failure modes. Watch these.
 
 "Baker Percentage" filters out beginners. That's intentional. But if the business needs to broaden — to teaching, to other doughs, to a cooking app — the name will fight. **Mitigation:** don't broaden under this name. Sub-brands or sister products if growth demands it.
 
-### Risk 2: Linen drifts into wellness.
+### Risk 2: The warm-paper register drifts into wellness.
 
-Linen is a warm paper, and warm paper plus poor execution = cream-and-sage wellness brand. **Mitigation:** Linen never appears without (a) Geist Mono numerals doing brand work somewhere on the same surface, (b) Char as the primary ink (never a softer brown), and (c) Ember used somewhere on the page if action is present. If any of these are missing on a Linen surface, the brand has slipped toward wellness.
+Warm paper plus poor execution = cream-and-sage wellness brand. **Mitigation:** the Bake-register paper never appears without (a) mono numerals doing brand work somewhere on the same surface, (b) deep ink as the primary type color (never a softer brown), and (c) the hot accent used somewhere on the page if action is present. If any of these are missing on a Bake surface, the brand has slipped toward wellness.
 
 ### Risk 3: The two registers confuse the visual identity.
 
-A brand with two visual languages risks looking like two brands. **Mitigation:** the Formula register and the Bake register share *everything except* canvas, motion tempo, and the presence of Caveat. Same typography, same palette, same iconography, same hairlines, same Ember rules. The two registers are the same brand on two different papers.
+A brand with two visual languages risks looking like two brands. **Mitigation:** the Formula register and the Bake register share *everything except* canvas, motion tempo, and the presence of handwriting. Same typography, same accent rules, same iconography, same hairlines. The two registers are the same brand on two different papers.
 
 ### Risk 4: The peer-level voice reads cold.
 
-The Formula register is calm and dry by design. To anyone outside the audience, calm can read as cold. **Mitigation:** the manifesto, onboarding screen 2, and Bake register copy do the warming work. If marketing reads cold, push more copy into the Bake register.
+The Formula register is calm and dry by design. To anyone outside the audience, calm can read as cold. **Mitigation:** the manifesto and Bake register copy do the warming work. If marketing reads cold, push more copy into the Bake register.
 
 ### Risk 5: The notebook becomes engagement bait.
 
@@ -861,7 +461,7 @@ The diary feature is the easiest place to slip into bad patterns — streaks, "y
 
 ### Risk 6: Kitchen-time motion makes the app feel slow.
 
-Slower motion can read as sluggish to anyone outside the target audience. **Mitigation:** the slower motion is in the Bake register only. Formula content is still snappy. Timers are still precise. The slower tempo is reserved for content that benefits from breath — landing pages, diary entries, marketing surfaces.
+Slower motion can read as sluggish to anyone outside the target audience. **Mitigation:** the slower tempo is in the Bake register only. Formula content is still snappy. Timers are still precise.
 
 ---
 
