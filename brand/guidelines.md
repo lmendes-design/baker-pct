@@ -1,6 +1,6 @@
 # Baker Percentage — Brand Guidelines
 
-**Version:** 1.1
+**Version:** 1.2
 **Date:** 2026-05-28
 **Status:** Working brand document. Every decision here is a commitment, not a suggestion — but every commitment is revisable with reason.
 
@@ -31,7 +31,7 @@ The brand has two voices and two visual languages, both real, both Baker Percent
 | Register      | When it speaks                                                       | What it sounds and looks like                                                                |
 | ------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | **Formula**   | The recipe. The math. The artifact you author and publish.           | Editorial. Precise. Mono numerals. Hairlines. Lighter paper.                                  |
-| **Bake**      | The diary. The process. The notes you take during and after a bake.  | Warm. Handed. Slower. Older paper. Handwriting in the margins. Photos dropped in like polaroids. |
+| **Bake**      | The diary. The process. The notes you take during and after a bake.  | Warm. Handed. Slower. Older paper. Italic serif for personal moments. Photos dropped in like polaroids. |
 
 These don't fight. A baker's notebook has both: a typed formula on one page, scribbled notes on the next. The brand earns its dimensionality by holding both without compromising either.
 
@@ -327,12 +327,13 @@ Dark mode is a respected system setting, not the canvas. The dark canvas is warm
 
 ## 3.3 Type strategy
 
-Four typographic roles, used in strict accordance with what each one is for.
+Three typographic roles. One family per role, used in strict accordance with what each one is for.
 
-- **A display serif with character** carries recipe titles, hero copy, and any marquee moment. The brand's voice when it speaks formally.
+- **A display serif with character** carries recipe titles, hero copy, marquee moments, and — in its *italic* — the personal voice of the Bake register: diary titles, captions, the "Sunday morning." moments. The brand's voice when it speaks formally or warmly.
 - **A precise neo-grotesque sans** carries UI labels, body copy, navigation, buttons. The brand's voice when it speaks plainly.
 - **A monospaced face** is used exclusively for quantities — every percentage, gram, temperature, duration, ratio. This is the signature typographic move of the brand. If it's a number, it's in the mono. If it's prose, it's in the sans. There is no third option.
-- **A handwriting face** is reserved for diary marginalia and for the brand's "demo notebook" examples that show what a bake page looks like. It is a *feature* font, not a brand font. It never appears in marketing chrome, UI labels, or recipe content. It represents a user's handwriting — never the brand's.
+
+The same serif carries both the Formula register's formal moments and the Bake register's personal ones. The shift is in *use* — regular for the recipe, italic for the diary — not in *font*. One serif, one sans, one mono. The brand stays consistent; the Bake register's warmth comes from materiality, voice, and tempo — not from a different typeface.
 
 The principle is what the doc commits to. Specific typefaces, weights, and sizing live in the design system and can be substituted for equivalents that serve the same role without changing the brand.
 
@@ -342,9 +343,9 @@ The principle is what the doc commits to. Specific typefaces, weights, and sizin
 
 The two paper stocks are not just colors; they are *paper*. They have grain, weight, edges. Treat them like real paper. The Bake-register paper has slightly more grain than the Formula-register paper — it's older.
 
-Handwriting is a material in this brand, used sparingly and positionally. Marginalia sits in margins, between rows of typed text, or below a printed recipe. It annotates typeset content; it doesn't replace it. The brand types. Users write.
-
 Photographs, when they appear, are *attached* to the page, not embedded in it — paper-bordered, slightly rotated, with a soft shadow. The page is the page; the photo is the photo. They sit together, but they don't fuse.
+
+Margins matter. Diary pages breathe more than recipe pages — generous whitespace is a material choice, not an oversight. So is the rhythm at which they reveal (see §3.7).
 
 Three rules:
 
@@ -449,7 +450,7 @@ Warm paper plus poor execution = cream-and-sage wellness brand. **Mitigation:** 
 
 ### Risk 3: The two registers confuse the visual identity.
 
-A brand with two visual languages risks looking like two brands. **Mitigation:** the Formula register and the Bake register share *everything except* canvas, motion tempo, and the presence of handwriting. Same typography, same accent rules, same iconography, same hairlines. The two registers are the same brand on two different papers.
+A brand with two visual languages risks looking like two brands. **Mitigation:** the Formula register and the Bake register share *everything* — same typography family, same color palette, same iconography, same hairlines, same accent rules. They differ only in canvas (the paper they sit on), motion tempo, and which voice of the serif leads (regular for Formula, italic for Bake). The two registers are the same brand on two different papers, set in two different voices of the same font.
 
 ### Risk 4: The peer-level voice reads cold.
 

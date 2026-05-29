@@ -1,5 +1,23 @@
 # Brand guidelines — changelog
 
+## v1.2 — 2026-05-28
+
+Removed the handwriting font as a brand element.
+
+The reasoning: a handwriting face creates too much typographic contrast with the rest of the brand and is harder to read at body sizes. The Bake register can express its warmth without breaking type-system consistency — italic of the display serif does the personal-voice work that the handwriting font was doing, and the warmth comes from materiality, voice, motion, and layout, not from a separate typeface.
+
+The brand now commits to **three typographic roles, one family per role**:
+
+- A display serif with character — formal moments in regular weight, personal/diary moments in italic.
+- A precise neo-grotesque sans — UI, body, navigation.
+- A monospaced face — every quantity, exclusively.
+
+No fourth role. The Bake register's warmth lives in older paper, polaroid photo drops, generous margins, kitchen-time motion, and the words the user writes — not in a different font.
+
+Sections updated: §1.2 (registers table), §3.3 (type strategy), §3.4 (materiality), Appendix A (Risk 3).
+
+---
+
 ## v1.1 — 2026-05-28
 
 Structural revision focused on **concept over prescription**. The brand's strategic decisions are unchanged; the doc just stops telling itself how to execute them.
